@@ -1,0 +1,214 @@
+/* Material Customization */
+:root {
+    --pure-material-primary-rgb: 255, 191, 0;
+    --pure-material-onsurface-rgb: 0, 0, 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(../ab.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.registration {
+    position: relative;
+    border-radius: 8px;
+    padding: 16px 48px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    background-color: white;
+}
+
+h1 {
+    margin: 32px 0;
+    font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
+    font-weight: normal;
+    text-align: center;
+}
+
+.registration > label {
+    display: block;
+    margin: 24px 0;
+    width: 320px;
+}
+
+@media only screen and (max-width: 600px) {
+    .registration > label {
+        display: block;
+        margin: 24px 0;
+        width: 70vw;
+    }
+}
+
+a {
+    color: rgb(var(--pure-material-primary-rgb));
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    display: block !important;
+    margin: 32px auto;
+    margin-bottom: 50px;
+}
+
+.done,
+.progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    visibility: hidden;
+}
+
+.done {
+    transition: visibility 0s 1s;
+}
+
+.signed > .done {
+    visibility: visible;
+}
+
+.done > a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.progress {
+    opacity: 0;
+}
+
+.signed > .progress {
+    animation: loading 4s;
+}
+
+@keyframes loading {
+    0% {
+        visibility: visible;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    87.5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.left-footer,
+.right-footer {
+    position: fixed;
+    padding: 14px;
+    bottom: 14px;
+    color: #555;
+    background-color: #eee;
+    font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.left-footer {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+    text-align: left;
+}
+
+.right-footer {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    text-align: right;
+}
+
+.left-footer > a,
+.right-footer > a {
+    color: black;
+}
+
+.left-footer > a:hover,
+.right-footer > a:hover {
+    text-decoration: underline;
+}
+
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #fbc700;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
